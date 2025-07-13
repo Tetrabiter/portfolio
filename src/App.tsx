@@ -11,7 +11,7 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="w-full h-screen flex flex-col">
+      <div className="w-full flex flex-col">
         <Header />
         <Hero />
         <About />

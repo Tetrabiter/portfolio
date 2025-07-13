@@ -1,3 +1,4 @@
+import { useState } from "react"
 import {
     Carousel,
     CarouselContent,
@@ -6,9 +7,27 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 
+
 const Projects = () => {
+
+    const project = [
+
+    ]
+
+
+    const [isOpen , setOpen] = useState(false);
+
+    function handleOpen(){
+        setOpen(true);
+    }
+
+    function handleClose(){
+        setOpen(false);
+    }
+
+
     return (
-        <section className="w-[80%] py-16">
+        <section id="projects" className="w-[80%] py-16 mx-auto">
             <h2 className="text-3xl font-semibold mb-6 text-center">Мои проекты</h2>
 
             <Carousel opts={{ align: "center" }}>
@@ -26,7 +45,7 @@ const Projects = () => {
                             <p className="text-sm text-muted-foreground">
                                 Краткое описание проекта. Что делает, зачем, для кого.
                             </p>
-                            <p className="text-xs">Stack: React, Firebase, Tailwind</p>
+                            <p className="text-xs">Stack: React, Yandex API, Tailwind</p>
                             <a
                                 href="https://example.com"
                                 target="_blank"
@@ -53,7 +72,7 @@ const Projects = () => {
                             <p className="text-sm text-muted-foreground">
                                 Другое описание проекта. Возможно pet-проект.
                             </p>
-                            <p className="text-xs">Stack: Next.js, Prisma</p>
+                            <p className="text-xs">Stack: React, PostgreSQL , Prisma , Node JS</p>
                             <a
                                 href="https://example.com"
                                 target="_blank"
