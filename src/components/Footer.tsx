@@ -27,7 +27,7 @@ const Footer = () => {
       {/* Инфо */}
       <div className="text-center md:text-right">
         <p>
-          © {new Date().getFullYear()} Tim. Made with ❤️ using React & Shadcn.
+          © {new Date().getFullYear()} Все права находится без защиты
         </p>
       </div>
     </footer>
