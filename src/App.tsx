@@ -1,6 +1,7 @@
 import About from "./components/About"
 import { Contact } from "./components/Contact"
 import DotNavigation from "./components/DotNavigation"
+import Experience from "./components/Experience"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
@@ -17,6 +18,7 @@ function App() {
         <DotNavigation />
         <Hero />
         <About />
+        <Experience />
         <Projects />
         <Contact />
         <Footer />
