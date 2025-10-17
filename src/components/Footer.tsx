@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-border py-6 px-4 flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
+    <footer className="w-full py-6 px-4 flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
       
       {/* Социальные иконки */}
       <div className="flex gap-4 mb-4 md:mb-0">

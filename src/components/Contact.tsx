@@ -1,19 +1,24 @@
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+import { Card } from "./ui/card";
+import { FaGithub, FaTelegram } from "react-icons/fa"
 
 export function Contact() {
   return (
     <div>
-      <section className="w-full py-16 px-4 max-w-xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-4">Связаться со мной</h2>
-        <form className="flex flex-col gap-4">
-          <Input placeholder="Ваш Email" />
-          <Textarea placeholder="Сообщение" />
-          <Button className="text-white dark:text-black" type="submit">
-            Отправить
-          </Button>
-        </form>
+      <section className="w-full max-w-3xl py-16 px-4 mx-auto flex items-center gap-12">
+        <div>
+          <h2 className="text-6xl font-semibold mb-2">Давайте свяжемся!</h2>
+          <p className="text-xl">Всегда заинтересован в возможностях , работе над продуктами, развитии навыков</p>
+          <p className="underline mt-2">timofei.yelivanov@gmail.com →</p>
+        </div>
+        <div className="grid gap-y-6">
+          <Card className="p-8 hover:bg-gray-950 focus:outline-1 focus:outline-offset-2 focus:outline-black dark:focus:outline-white duration-200">
+              <FaTelegram className="w-8 h-8"/>
+          </Card>
+
+          <Card className="p-8 hover:bg-gray-950 focus:outline-1 focus:outline-offset-2 focus:outline-black dark:focus:outline-white duration-200">
+            <FaGithub className="w-8 h-8"/>
+          </Card>
+        </div>
       </section>
     </div>
   );

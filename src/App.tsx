@@ -1,5 +1,6 @@
 import About from "./components/About"
 import { Contact } from "./components/Contact"
+import DotNavigation from "./components/DotNavigation"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
@@ -12,7 +13,8 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="w-full flex flex-col">
-        <Header />
+        {/* <Header /> */}
+        <DotNavigation />
         <Hero />
         <About />
         <Projects />

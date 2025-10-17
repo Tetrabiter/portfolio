@@ -34,7 +34,7 @@ const Projects = () => {
     {
       id: 2,
       title: "marcus ai",
-      description: "",
+      description: "ИИ-интервьюер который проводит собеседования для разработчиков",
       demoLink: "#",
       github: "#",
       technologies: ["React ", "Ollama ", "Python"],
