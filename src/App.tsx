@@ -9,7 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 function App() {
   const sections = [
-    { id: "hero", label: "Главная" },
+    /* { id: "hero", label: "Главная" }, */
     { id: "about", label: "Обо мне" },
     { id: 'experience', label: 'Опыт работы'},
     { id: "projects", label: "Проекты" },
@@ -24,7 +24,7 @@ function App() {
         />
         
         {/* Просто передаем id, хук сам найдет элементы */}
-        <Hero id="hero" />
+        {/* <Hero/> */}
         <About/>
         <Experience/>
         <Projects/>
