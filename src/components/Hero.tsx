@@ -1,6 +1,6 @@
 const Hero = () => {
     return (
-     <div>
+     <div id="hero" className="min-h-screen">
 
      </div>
     )

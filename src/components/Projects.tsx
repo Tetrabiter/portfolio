@@ -82,7 +82,7 @@ const Projects = () => {
   ));
 
   return (
-    <section id="projects" className="w-[90%] py-16 mx-auto">
+    <section id="projects"  className="w-[90%] min-h-screen py-16 mx-auto">
       <h2 className="text-7xl font-semibold mb-6">Мои проекты</h2>
 
       <Carousel opts={{ align: "center" }}>
