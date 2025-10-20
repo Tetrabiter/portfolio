@@ -1,11 +1,16 @@
-import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 
 const About = () => {
 
   const technologies = ["React" , "Tailwind CSS", "TypeScript", "Shadcn UI" , "WebGL" , "SQL/NO SQL DB"]
 
   const listOfTechnologies = technologies.map((tech) =>(
-      <Button tabIndex={0} className="bg-black text-white outline- outline-offset-2 outline-indigo-50">{tech}</Button>
+      <Badge 
+        variant={"outline"}
+        className="bg-black text-white px-4 py-2"
+      >
+        {tech}
+      </Badge>
   ))
 
 
