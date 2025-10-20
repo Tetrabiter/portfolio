@@ -1,10 +1,3 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Card } from "./ui/card";
 
 const Projects = () => {
@@ -56,9 +49,9 @@ const Projects = () => {
   ];
 
   const projectList = projects.map((project) => (
-    <CarouselItem
+    <div
       key={project.id}
-      className="w-full h-100 flex basis-1/1 md:basis-1/1 lg:basis-1/2 xl:basis-1/3"
+      className="w-full h-100 px-4 space-y-5 basis-1/1 md:basis-1/1 lg:basis-1/2 xl:basis-1/3"
     >
       <Card className="w-2/3 h-full px-2">
         <div className="w-full">
@@ -78,19 +71,17 @@ const Projects = () => {
       <div className="w-full bg-muted overflow-hidden">
         <img src={project.imgSrc} alt="" className="w-full h-full" />
       </div>
-    </CarouselItem>
+    </div>
   ));
 
   return (
     <section id="projects"  className="w-[90%] min-h-screen py-16 mx-auto">
       <h2 className="text-7xl font-semibold mb-6">Мои проекты</h2>
 
-      <Carousel opts={{ align: "center" }}>
-        <CarouselContent>{projectList}</CarouselContent>
+      <Card>
+        <div>{projectList}</div>
 
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      </Card>
     </section>
   );
 };

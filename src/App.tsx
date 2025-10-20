@@ -18,7 +18,7 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="w-full flex flex-col">
+      <div className="w-full flex flex-col overflow-x-hiddenhidden">
         <DotNavigation 
           sections={sections}
         />

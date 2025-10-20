@@ -29,6 +29,7 @@ const Footer = () => {
         <p>
           © {new Date().getFullYear()} Все права находится без защиты
         </p>
+        <p>Сделано с помощью React + Shadcn UI</p>
       </div>
     </footer>
   )
