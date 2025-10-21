@@ -40,7 +40,7 @@ const DotNavigation: React.FC<DotNavigationProps> = ({
             <div
               className={`relative w-3 h-5 rounded-full transition-all duration-300 transform ${
                 activeSection === section.id
-                  ? 'bg-red-300 scale-150'
+                  ? 'bg-green-400 scale-150'
                   : 'bg-white group-hover:bg-gray-500 group-hover:scale-110'
               }`}
             />

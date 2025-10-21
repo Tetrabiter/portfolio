@@ -1,4 +1,5 @@
 import { Badge } from "./ui/badge";
+import { FaCircle } from "react-icons/fa";
 
 const About = () => {
 
@@ -17,17 +18,18 @@ const About = () => {
   return (
     <section
       id="about"
-      className="w-full min-h-screen py-16 px-4 max-w-3xl mx-auto"
+      className="w-full min-h-[50vh] py-16 px-4 max-w-5xl mx-auto"
     >
-      <div>
+      <div className="flex flex-col gap-8 px-4 text-left">
         
         <div>
-          <p className="">PORTFOLIO / 2025</p>
-          <h1 className="">Тимофей Еливанов</h1>
-          <p className="">Frontend Developer crafting digital experiences at the intersection of design, technology, and user experience</p>
-          <div className="flex gap-4">
+          <p className="text-opacity-50">PORTFOLIO / 2025</p>
+          <h1 className="text-5xl">Тимофей Еливанов</h1>
+          <p className="text-2xl">Frontend Developer crafting digital experiences at the intersection of design, technology, and user experience</p>
+          <div className="flex items-center gap-1">
+            <FaCircle className="text-green-500"/>
             <p>Available for work</p>
-            <p>Russia</p>
+            <p className="ml-5">Russia</p>
           </div>
         </div>
 
