@@ -2,7 +2,6 @@ import About from "./components/About";
 import { Contact } from "./components/Contact";
 import DotNavigation from "./components/DotNavigation";
 import Experience from "./components/Experience";
-import Footer from "./components/Footer";
 import Projects from "./components/Projects";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -28,8 +27,8 @@ function App() {
         <Experience/>
         <Projects/>
         <Contact/>
-        
-        <Footer />
+    
+         <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none"></div>
       </div>
     </ThemeProvider>
   );

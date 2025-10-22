@@ -72,13 +72,13 @@ const Experience = () => {
   );
 
   return (
-    <section id="experience" className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <section id="experience" className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-4">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
           Опыт работы
         </h2>
-        <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-400">
+        <p className="text-3xl font-mono sm:text-5xl lg:text-6xl font-bold text-gray-400">
           2021-2024
         </p>
       </div>

@@ -1,15 +1,18 @@
-import { Card } from "./ui/card";
+import { Badge } from "./ui/badge"
+import { Card } from "./ui/card"
+import { Button } from "./ui/button"
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
 
 const Projects = () => {
   interface Project {
-    id: number;
-    title: string;
-    description: string;
-    demoLink: string;
-    github: string;
-    technologies: string[];
-    imgSrc: string;
-    category: string;
+    id: number
+    title: string
+    description: string
+    demoLink: string
+    github: string
+    technologies: string[]
+    imgSrc: string
+    category: string
   }
 
   const projects: Project[] = [
@@ -17,73 +20,118 @@ const Projects = () => {
       id: 1,
       title: "akat.kz",
       description:
-        "Сайт для TOO AKAT TRADING. На сайте используется yandex api , сам же он генерирует первичные лиды , которые после попадают на почту менеджеру.",
+        "Сайт для TOO AKAT TRADING. На сайте используется yandex api, сам же он генерирует первичные лиды, которые после попадают на почту менеджеру.",
       demoLink: "https://akat.kz/",
       github: "#",
-      technologies: ["React ", "TailwindCSS ", "API"],
-      imgSrc: "",
+      technologies: ["React", "TailwindCSS", "API"],
+      imgSrc: "/image.png",
       category: "Landing",
     },
     {
       id: 2,
       title: "marcus ai",
-      description:
-        "ИИ-интервьюер который проводит собеседования для разработчиков",
+      description: "ИИ-интервьюер который проводит собеседования для разработчиков",
       demoLink: "#",
-      github: "#",
-      technologies: ["React ", "Ollama ", "Python"],
-      imgSrc: "",
+      github: "https://github.com/Tetrabiter/Marcus.git",
+      technologies: ["React", "Ollama", "Python"],
+      imgSrc: "/ai-chatbot-interface.png",
       category: "AI chat-bot",
     },
     {
       id: 3,
       title: "Rootly",
-      description:
-        "Проект который был сделан за 48 часов , в качестве решения кейса на хакатоне от T1",
+      description: "Проект который был сделан за 48 часов, в качестве решения кейса на хакатоне от T1",
       demoLink: "#",
-      github: "#",
-      technologies: ["React ", "TailwindCSS ", "API"],
-      imgSrc: "",
+      github: "https://github.com/Tetrabiter/rootly-frontend.git",
+      technologies: ["React", "TailwindCSS", "API"],
+      imgSrc: "/Screenshot 2025-10-01 at 19-36-42 rootly-frontend.png",
       category: "SPA",
     },
-  ];
-
-  const projectList = projects.map((project) => (
-    <div
-      key={project.id}
-      className="w-full h-100 px-4 space-y-5 basis-1/1 md:basis-1/1 lg:basis-1/2 xl:basis-1/3"
-    >
-      <Card className="w-2/3 h-full px-2">
-        <div className="w-full">
-          <h3 className="text-lg font-semibold">{project.title}</h3>
-          <p className="text-sm text-muted-foreground">{project.description}</p>
-          <p className="text-xs">{project.technologies}</p>
-          <a
-            href={project.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary underline text-sm"
-          >
-            Смотреть →
-          </a>
-        </div>
-      </Card>
-      <div className="w-full bg-muted overflow-hidden">
-        <img src={project.imgSrc} alt="" className="w-full h-full" />
-      </div>
-    </div>
-  ));
+  ]
 
   return (
-    <section id="projects"  className="w-[90%] min-h-screen py-16 mx-auto">
-      <h2 className="text-7xl font-semibold mb-6">Мои проекты</h2>
+    <section id="projects" className="min-h-screen py-20 sm:py-32">
+      <div className="space-y-12 sm:space-y-16">
+        
+        <div className="w-full text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Мои проекты</h2>
+        </div>
 
-      <Card>
-        <div>{projectList}</div>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project) => (
+              <Card
+                key={project.id}
+                className="group relative overflow-hidden border-border hover:border-muted-foreground/50 transition-all duration-500"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={project.imgSrc || "/placeholder.svg"}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/60" />
 
-      </Card>
+                  <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="text-xs text-muted-foreground font-mono tracking-wider">
+                        {project.category.toUpperCase()}
+                      </div>
+                      <h3 className="text-2xl font-light text-foreground group-hover:text-muted-foreground transition-colors duration-500">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="outline"
+                            className="bg-background/50 backdrop-blur-sm hover:border-muted-foreground/50 transition-colors duration-300"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <Button
+                          asChild
+                          size="icon"
+                          variant="outline"
+                          className="bg-background/50 backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
+                        >
+                          <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                            <FaExternalLinkAlt className="h-4 w-4" />
+                          </a>
+                        </Button>
+                        {project.github !== "#" && (
+                          <Button
+                            asChild
+                            size="icon"
+                            variant="outline"
+                            className="bg-background/50 backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
+                          >
+                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                              <FaGithub className="h-4 w-4" />
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

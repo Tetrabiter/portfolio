@@ -1,47 +1,81 @@
-import { Badge } from "./ui/badge";
-import { FaCircle } from "react-icons/fa";
+import { Badge } from "@/components/ui/badge";
 
 const About = () => {
+  const technologies = [
+    "React",
+    "Tailwind CSS",
+    "TypeScript",
+    "Shadcn UI",
+    "WebGL",
+    "SQL/NO SQL DB",
+  ];
 
-  const technologies = ["React" , "Tailwind CSS", "TypeScript", "Shadcn UI" , "WebGL" , "SQL/NO SQL DB"]
-
-  const listOfTechnologies = technologies.map((tech) =>(
-      <Badge 
-        variant={"outline"}
-        className="bg-black text-white px-4 py-2"
-      >
-        {tech}
-      </Badge>
-  ))
-
+  const listOfTechnologies = technologies.map((tech) => (
+    <Badge
+      key={tech}
+      variant="outline"
+      className="px-3 py-1 text-xs border-white hover:border-muted-foreground/50 transition-colors duration-300"
+    >
+      {tech}
+    </Badge>
+  ));
 
   return (
     <section
       id="about"
-      className="w-full min-h-[50vh] py-16 px-4 max-w-5xl mx-auto"
+      className="w-full min-h-screen py-16 px-4 max-w-5xl mx-auto flex items-center"
     >
-      <div className="flex flex-col gap-8 px-4 text-left">
-        
-        <div>
-          <p className="text-opacity-50">PORTFOLIO / 2025</p>
-          <h1 className="text-5xl">Тимофей Еливанов</h1>
-          <p className="text-2xl">Frontend Developer crafting digital experiences at the intersection of design, technology, and user experience</p>
-          <div className="flex items-center gap-1">
-            <FaCircle className="text-green-500"/>
-            <p>Available for work</p>
-            <p className="ml-5">Russia</p>
+      <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
+        <div className="lg:col-span-3 space-y-6 sm:space-y-8">
+          <div className="space-y-3 sm:space-y-2">
+            <div className="text-sm text-muted-foreground font-mono tracking-wider">
+              PORTFOLIO / 2025
+            </div>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+              Тимофей
+              <br />
+              <span className="text-muted-foreground">Еливанов</span>
+            </h1>
+          </div>
+
+          <div className="space-y-6 max-w-md">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+              Frontend Developer crafting digital experiences at the
+              intersection of
+              <span className="text-foreground"> design</span>,
+              <span className="text-foreground"> technology</span>, and
+              <span className="text-foreground"> user experience</span>.
+            </p>
+
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                Available for work
+              </div>
+              <div>Russia</div>
+            </div>
           </div>
         </div>
 
-        <div>
-            <p>НА ДАННЫЙ МОМЕНТ</p>
-            <p>Frontend разработчик</p>
-            <p>@Open source contributer</p>
-        </div>
+        <div className="lg:col-span-2 flex flex-col justify-end space-y-6 sm:space-y-8 mt-8 lg:mt-0">
+          <div className="space-y-4">
+            <div className="text-sm text-muted-foreground font-mono">
+              НА ДАННЫЙ МОМЕНТ
+            </div>
+            <div className="space-y-2">
+              <div className="text-foreground">Frontend разработчик</div>
+              <div className="text-muted-foreground">
+                @Open source contributer
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <p>ФОКУС НА</p>
-          <div>{listOfTechnologies}</div>
+          <div className="space-y-4">
+            <div className="text-sm text-muted-foreground font-mono">
+              ФОКУС НА
+            </div>
+            <div className="flex flex-wrap gap-2">{listOfTechnologies}</div>
+          </div>
         </div>
       </div>
     </section>

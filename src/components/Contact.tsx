@@ -4,7 +4,7 @@ import { FaGithub, FaTelegram } from "react-icons/fa";
 export function Contact() {
   return (
     <div>
-      <section id="contact" className="w-full max-w-3xl py-16 px-4 mx-auto flex items-center gap-12">
+      <section id="contact" className="w-full max-w-3xl flex flex-col sm:flex-row py-16 px-4 mx-auto  items-center gap-12">
         <div>
           <h2 className="text-6xl font-semibold mb-2">Давайте свяжемся!</h2>
           <p className="text-xl">
@@ -13,7 +13,7 @@ export function Contact() {
           </p>
           <p className="underline mt-2">timofei.yelivanov@gmail.com →</p>
         </div>
-        <div className="grid gap-y-6">
+        <div className="grid grid-flow-col sm:grid-flow-row gap-x-5 gap-y-6">
           <a href="https://t.me/TimElesh">
             <Card
               tabIndex={0}
