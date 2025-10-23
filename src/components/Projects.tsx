@@ -2,6 +2,7 @@ import { Badge } from "./ui/badge"
 import { Card } from "./ui/card"
 import { Button } from "./ui/button"
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
+import { useSectionObserver } from "@/utils/useIntersectionObserver"
 
 const Projects = () => {
   interface Project {
@@ -49,9 +50,22 @@ const Projects = () => {
     },
   ]
 
+  const sectionIds = ['projects'];
+  const { visibleSections } = useSectionObserver(sectionIds, {
+    threshold: 0.1, // Более чувствительный триггер
+    rootMargin: '-20% 0px -20% 0px'
+  });
+
+  const isVisible = visibleSections.has('projects');
+
+
   return (
     <section id="projects" className="min-h-screen py-20 sm:py-32">
-      <div className="space-y-12 sm:space-y-16">
+       <div className={`
+        space-y-12 sm:space-y-16
+        transition-all duration-1000 ease-out
+        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+      `}>
         
         <div className="w-full text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Мои проекты</h2>
@@ -91,7 +105,7 @@ const Projects = () => {
                           <Badge
                             key={tech}
                             variant="outline"
-                            className="bg-background/50 backdrop-blur-sm hover:border-muted-foreground/50 transition-colors duration-300"
+                            className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:border-muted-foreground/50 transition-colors duration-300"
                           >
                             {tech}
                           </Badge>
@@ -103,7 +117,7 @@ const Projects = () => {
                           asChild
                           size="icon"
                           variant="outline"
-                          className="bg-background/50 backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
+                          className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
                         >
                           <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
                             <FaExternalLinkAlt className="h-4 w-4" />
@@ -114,7 +128,7 @@ const Projects = () => {
                             asChild
                             size="icon"
                             variant="outline"
-                            className="bg-background/50 backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
+                            className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
                           >
                             <a href={project.github} target="_blank" rel="noopener noreferrer">
                               <FaGithub className="h-4 w-4" />

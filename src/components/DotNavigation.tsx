@@ -16,7 +16,7 @@ const DotNavigation: React.FC<DotNavigationProps> = ({
   const { activeSection, scrollToSection } = useSectionObserver(sectionIds);
 
   return (
-    <nav className={`hidden sm:block fixed left-8 top-1/2 transform -translate-y-1/2 z-50 ${className}`}>
+    <nav className={`hidden lg:block fixed left-8 top-1/2 transform -translate-y-1/2 z-50 ${className}`}>
       <div className="flex flex-col items-center space-y-4">
         {sections.map((section, index) => (
           <button

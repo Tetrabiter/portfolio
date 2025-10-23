@@ -1,7 +1,7 @@
 import { Card } from "./ui/card";
 import { FaGithub, FaTelegram } from "react-icons/fa";
 
-export function Contact() {
+export default function Contact() {
   return (
     <div>
       <section id="contact" className="w-full max-w-3xl flex flex-col sm:flex-row py-16 px-4 mx-auto  items-center gap-12">
