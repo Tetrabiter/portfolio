@@ -1,4 +1,5 @@
 import { Badge } from "./ui/badge";
+import { useSectionObserver } from "@/utils/useIntersectionObserver";
 
 interface WorkExperience {
   id: number;
@@ -13,43 +14,57 @@ const Experience = () => {
   const workExperience: WorkExperience[] = [
     {
       id: 1,
-      timeline: "2023-2024",
+      timeline: "2024-2025",
       jobTitle: "Front-end developer",
       companyName: "Aitomaton",
-      description: "Built interfaces to display AI stats",
+      description:
+        "Создание интерфейсов для дэшборда и графов , которые отображают статистику об ИИ",
       jobStack: ["React", "TypeScript", "Joy UI", "CSS-IN-JS"],
     },
     {
       id: 2,
-      timeline: "2022-2023",
+      timeline: "2023-2024",
       jobTitle: "Front-end developer",
-      companyName: "Tech Company",
-      description: "Developed responsive web applications",
-      jobStack: ["React", "JavaScript", "Material-UI", "Redux"],
+      companyName: "Фриланс",
+      description: "Администрирование и настройка сайтов",
+      jobStack: ["React", "JavaScript", "WordPress", "CSS"],
     },
     {
       id: 3,
-      timeline: "2021-2022",
-      jobTitle: "Junior Front-end Developer",
-      companyName: "Startup Inc",
-      description: "Created user interfaces and components",
-      jobStack: ["HTML", "CSS", "JavaScript", "React"],
+      timeline: "2022-2023",
+      jobTitle: "Джуниор Front-end Developer",
+      companyName: "Стартап",
+      description:
+        "Создание мобильного приложения на react native для людей с ограниченными возможностями.",
+      jobStack: ["HTML", "CSS", "JavaScript", "React Native", "Expo"],
     },
   ];
 
-  const WorkExperienceItem = ({ experience }: { experience: WorkExperience }) => (
+  const WorkExperienceItem = ({
+    experience,
+  }: {
+    experience: WorkExperience;
+  }) => (
     <div key={experience.id}>
       <div className="flex flex-col lg:flex-row justify-between items-start gap-6 py-6 rounded-lg px-4">
         {/* Timeline */}
         <div className="lg:w-1/4">
-          <p className="text-xl font-semibold text-white">{experience.timeline}</p>
+          <p className="text-xl font-semibold text-white">
+            {experience.timeline}
+          </p>
         </div>
 
         {/* Job Details */}
         <div className="lg:w-2/4">
-          <p className="text-2xl font-bold text-white mb-2">{experience.jobTitle}</p>
-          <p className="text-xl text-white mb-2 font-medium">{experience.companyName}</p>
-          <p className="text-lg text-white leading-relaxed">{experience.description}</p>
+          <p className="text-2xl font-bold text-white mb-2">
+            {experience.jobTitle}
+          </p>
+          <p className="text-xl text-white mb-2 font-medium">
+            {experience.companyName}
+          </p>
+          <p className="text-lg text-white leading-relaxed">
+            {experience.description}
+          </p>
         </div>
 
         {/* Tech Stack */}
@@ -71,15 +86,26 @@ const Experience = () => {
     </div>
   );
 
+  const sectionIds = ["experience"];
+  const { visibleSections } = useSectionObserver(sectionIds, {
+    threshold: 0.1, // Более чувствительный триггер
+    rootMargin: "-20% 0px -20% 0px",
+  });
+
+  const isVisible = visibleSections.has('experience');
+
   return (
-    <section id="experience" className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <section
+      id="experience"
+      className={`w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+    >
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-4">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
           Опыт работы
         </h2>
         <p className="text-3xl font-mono sm:text-5xl lg:text-6xl font-bold text-gray-400">
-          2021-2024
+          2022-2024
         </p>
       </div>
 

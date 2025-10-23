@@ -1,10 +1,22 @@
 import { Card } from "./ui/card";
 import { FaGithub, FaTelegram } from "react-icons/fa";
+import { useSectionObserver } from "@/utils/useIntersectionObserver";
 
 export default function Contact() {
+  const sectionIds = ["contact"];
+  const { visibleSections } = useSectionObserver(sectionIds, {
+    threshold: 0.1, // Более чувствительный триггер
+    rootMargin: "-20% 0px -20% 0px",
+  });
+
+  const isVisible = visibleSections.has("contact");
+
   return (
     <div>
-      <section id="contact" className="w-full max-w-3xl flex flex-col sm:flex-row py-16 px-4 mx-auto  items-center gap-12">
+      <section
+        id="contact"
+        className={`w-full max-w-3xl flex flex-col sm:flex-row py-16 px-4 mx-auto  items-center gap-12 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      >
         <div>
           <h2 className="text-6xl font-semibold mb-2">Давайте свяжемся!</h2>
           <p className="text-xl">

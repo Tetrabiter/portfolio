@@ -1,4 +1,6 @@
 import { Badge } from "@/components/ui/badge";
+import { useSectionObserver } from "@/utils/useIntersectionObserver";
+
 
 const About = () => {
   const technologies = [
@@ -20,10 +22,19 @@ const About = () => {
     </Badge>
   ));
 
+  const sectionIds = ["about"];
+  const { visibleSections } = useSectionObserver(sectionIds, {
+    threshold: 0.1, // Более чувствительный триггер
+    rootMargin: "-20% 0px -20% 0px",
+  });
+
+  const isVisible = visibleSections.has('about');
+
+
   return (
     <section
       id="about"
-      className="w-full min-h-screen py-16 px-4 max-w-5xl mx-auto flex items-center"
+      className={`w-full min-h-screen py-16 px-4 max-w-5xl mx-auto flex items-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
         <div className="lg:col-span-3 space-y-6 sm:space-y-8">
