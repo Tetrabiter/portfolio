@@ -1,16 +1,7 @@
-import { useState } from "react";
 import { Separator } from "@radix-ui/react-separator";
 import Logo from "../assets/images/logo.png";
-import { GiHamburgerMenu } from "react-icons/gi";
 
 const Header = () => {
-
-  const [isMenuOpen , setMenuOpen] = useState(false);
-
-  function toggleMenu(){
-    setMenuOpen(!isMenuOpen);
-  }
-
 
   return (
     <header className="w-full h-30 border-b border-border">
