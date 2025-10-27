@@ -51,19 +51,18 @@ const About = () => {
 
           <div className="space-y-6 max-w-md">
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              Frontend Developer crafting digital experiences at the
-              intersection of
-              <span className="text-foreground"> design</span>,
-              <span className="text-foreground"> technology</span>, and
-              <span className="text-foreground"> user experience</span>.
+              Разработчик интерфейсов, создающий цифровые решения на стыке
+              <span className="text-foreground"> технологий</span>,
+              <span className="text-foreground"> дизайна</span> и
+              <span className="text-foreground"> пользовательского опыта</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                Available for work
+                Открыт для предложений
               </div>
-              <div>Russia</div>
+              <div>Россия, Екатеринбург</div>
             </div>
           </div>
         </div>
