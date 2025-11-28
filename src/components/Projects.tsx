@@ -21,11 +21,11 @@ const Projects = () => {
       id: 1,
       title: "akat.kz",
       description:
-        "Сайт для TOO AKAT TRADING. На сайте используется yandex api, сам же он генерирует первичные лиды, которые после попадают на почту менеджеру.",
+        "Сайт для TOO AKAT TRADING. На сайте используется yandex api, сам же он генерирует первичные лиды, которые после попадают на почту менеджеру. После создания сайта компания увеличила свои продажи на 30%",
       demoLink: "https://akat.kz/",
       github: "#",
       technologies: ["React", "TailwindCSS", "API"],
-      imgSrc: "/image.png",
+      imgSrc: "/akat-kz.png",
       category: "Landing",
     },
     {
@@ -45,9 +45,19 @@ const Projects = () => {
       demoLink: "#",
       github: "https://github.com/Tetrabiter/rootly-frontend.git",
       technologies: ["React", "TailwindCSS", "API"],
-      imgSrc: "/Screenshot 2025-10-01 at 19-36-42 rootly-frontend.png",
+      imgSrc: "/rootly.png",
       category: "SPA",
     },
+    {
+      id: 4, 
+      title: "интернет магазин Trekshine",
+      description: 'Проект на базе shopify themes и shopify api. В ходе работы над сайтом увеличил посещаемость в 5 раз, уменьшил время загрузки на 12%,',
+      demoLink: 'https://www.trekshine.com/',
+      github: '#',
+      technologies: ["HTML", "JavaScript", "Shopify API" , "CI/CD"],
+      imgSrc: "/trekshine.png",
+      category: 'Website',
+    }
   ]
 
   const sectionIds = ['projects'];

@@ -6,6 +6,8 @@ const About = () => {
   const technologies = [
     "React",
     "Tailwind CSS",
+    "JavaScript",
+    "HTML",
     "TypeScript",
     "Shadcn UI",
     "WebGL",
