@@ -1,25 +1,25 @@
-import { Badge } from "./ui/badge"
-import { Card } from "./ui/card"
-import { Button } from "./ui/button"
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
-import { useSectionObserver } from "@/utils/useIntersectionObserver"
+import { Badge } from "./ui/badge";
+import { Card } from "./ui/card";
+import { Button } from "./ui/button";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useSectionObserver } from "@/utils/useIntersectionObserver";
 
 const Projects = () => {
   interface Project {
-    id: number
-    title: string
-    description: string
-    demoLink: string
-    github: string
-    technologies: string[]
-    imgSrc: string
-    category: string
+    id: number;
+    title: string;
+    description: string;
+    demoLink: string;
+    github: string;
+    technologies: string[];
+    imgSrc: string;
+    category: string;
   }
 
   const projects: Project[] = [
     {
       id: 1,
-      title: "akat.kz",
+      title: "Akat.kz",
       description:
         "Сайт для TOO AKAT TRADING. На сайте используется yandex api, сам же он генерирует первичные лиды, которые после попадают на почту менеджеру. После создания сайта компания увеличила свои продажи на 30%",
       demoLink: "https://akat.kz/",
@@ -30,8 +30,9 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "marcus ai",
-      description: "ИИ-интервьюер который проводит собеседования для разработчиков",
+      title: "Marcus ai",
+      description:
+        "ИИ-интервьюер который проводит собеседования для разработчиков",
       demoLink: "#",
       github: "https://github.com/Tetrabiter/Marcus.git",
       technologies: ["React", "Ollama", "Python"],
@@ -41,7 +42,8 @@ const Projects = () => {
     {
       id: 3,
       title: "Rootly",
-      description: "Проект который был сделан за 48 часов, в качестве решения кейса на хакатоне от T1",
+      description:
+        "Проект который был сделан за 48 часов, в качестве решения кейса на хакатоне от T1. Кейс препдолагал создание сервиса для обработки terraform логов",
       demoLink: "#",
       github: "https://github.com/Tetrabiter/rootly-frontend.git",
       technologies: ["React", "TailwindCSS", "API"],
@@ -49,36 +51,50 @@ const Projects = () => {
       category: "SPA",
     },
     {
-      id: 4, 
-      title: "интернет магазин Trekshine",
-      description: 'Проект на базе shopify themes и shopify api. В ходе работы над сайтом увеличил посещаемость в 5 раз, уменьшил время загрузки на 12%,',
-      demoLink: 'https://www.trekshine.com/',
-      github: '#',
-      technologies: ["HTML", "JavaScript", "Shopify API" , "CI/CD"],
+      id: 4,
+      title: "Интернет магазин Trekshine",
+      description:
+        "Проект на базе shopify themes и shopify api. В ходе работы над сайтом увеличил посещаемость в 5 раз, уменьшил время загрузки на 22%.",
+      demoLink: "https://www.trekshine.com/",
+      github: "#",
+      technologies: ["HTML", "Liquid" ,"JavaScript", "Shopify API", "CI/CD"],
       imgSrc: "/trekshine.png",
-      category: 'Website',
-    }
-  ]
+      category: "Website",
+    },
+     {
+      id: 5,
+      title: "VsePoDomy.ru",
+      description:
+        "С нуля создал полноценный сайт для начинающей клининговой компании.В ходе работы был создан дизайн , сайт с формой заявки , интегрирована CRM-система Bitrix24.",
+      demoLink: "https://www.trekshine.com/",
+      github: "#",
+      technologies: ["React", "TypeScript", "CRM" , "TaliwindCSS"],
+      imgSrc: "/trekshine.png",
+      category: "Website",
+    },
+  ];
 
-  const sectionIds = ['projects'];
+  const sectionIds = ["projects"];
   const { visibleSections } = useSectionObserver(sectionIds, {
     threshold: 0.1, // Более чувствительный триггер
-    rootMargin: '-20% 0px -20% 0px'
+    rootMargin: "-20% 0px -20% 0px",
   });
 
-  const isVisible = visibleSections.has('projects');
-
+  const isVisible = visibleSections.has("projects");
 
   return (
     <section id="projects" className="min-h-screen py-20 sm:py-32">
-       <div className={`
+      <div
+        className={`
         space-y-12 sm:space-y-16
         transition-all duration-1000 ease-out
-        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-      `}>
-        
+        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+      `}
+      >
         <div className="w-full text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Мои проекты</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+            Мои проекты
+          </h2>
         </div>
 
         <div className="max-w-5xl mx-auto">
@@ -129,7 +145,11 @@ const Projects = () => {
                           variant="outline"
                           className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
                         >
-                          <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                          <a
+                            href={project.demoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <FaExternalLinkAlt className="h-4 w-4" />
                           </a>
                         </Button>
@@ -140,7 +160,11 @@ const Projects = () => {
                             variant="outline"
                             className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
                           >
-                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <FaGithub className="h-4 w-4" />
                             </a>
                           </Button>
@@ -155,7 +179,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
