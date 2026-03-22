@@ -1,0 +1,69 @@
+{
+    "nav": {
+        "about": "About me",
+        "experience": "Experience",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "about": {
+        "portfolio": "PORTFOLIO / 2025",
+        "firstName": "Timofey",
+        "lastName": "Elivanov",
+        "description": "Frontend developer crafting digital solutions at the intersection of <1>technology</1>, <3>design</3> and <5>user experience</5>.",
+        "status": "Open for opportunities",
+        "location": "Russia, Yekaterinburg",
+        "now_label": "CURRENTLY",
+        "now_title": "Frontend Developer",
+        "now_subtitle": "@Open source contributor",
+        "focus_label": "FOCUS"
+    },
+    "projects": {
+        "title": "My Projects",
+        "items": {
+            "akat": {
+                "title": "Akat.kz",
+                "description": "Website for AKAT TRADING. The site uses Yandex API and generates primary leads, which are then sent to the manager's email. After launching the site, the company increased its sales by 30%."
+            },
+            "marcus": {
+                "title": "Marcus ai",
+                "description": "AI-interviewer that conducts technical interviews for developers"
+            },
+            "rootly": {
+                "title": "Rootly",
+                "description": "A project built in 48 hours as a solution for a hackathon case by T1. The case involved creating a service for processing terraform logs"
+            },
+            "trekshine": {
+                "title": "Trekshine Online Store",
+                "description": "A project based on Shopify themes and Shopify API. During the work on the site, I increased traffic by 5 times and reduced loading time by 22%."
+            },
+            "vsepodomy": {
+                "title": "VsePoDomy.ru",
+                "description": "Built a complete website from scratch for a startup cleaning company. Designed the UI, created the site with an application form, and integrated it with Bitrix24 CRM."
+            },
+            "mindflow": {
+                "title": "Mindflow",
+                "description": "AI-interviewer that conducts technical interviews for developers"
+            }
+        }
+    },
+    "experience": {
+        "title": "Experience",
+        "items": {
+            "aitomaton": {
+                "jobTitle": "Front-end developer",
+                "companyName": "Aitomaton",
+                "description": "Creating interfaces for dashboards and graphs that display AI statistics."
+            },
+            "freelance": {
+                "jobTitle": "Front-end developer",
+                "companyName": "Freelance",
+                "description": "Website administration and maintenance."
+            },
+            "startup": {
+                "jobTitle": "Junior Front-end Developer",
+                "companyName": "Startup",
+                "description": "Creating a React Native mobile application for people with disabilities."
+            }
+        }
+    }
+}

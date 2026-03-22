@@ -1,0 +1,69 @@
+{
+    "nav": {
+        "about": "Обо мне",
+        "experience": "Опыт работы",
+        "projects": "Проекты",
+        "contact": "Контакты"
+    },
+    "about": {
+        "portfolio": "PORTFOLIO / 2025",
+        "firstName": "Тимофей",
+        "lastName": "Еливанов",
+        "description": "Разработчик интерфейсов, создающий цифровые решения на стыке <1>технологий</1>, <3>дизайна</3> и <5>пользовательского опыта</5>.",
+        "status": "Открыт для предложений",
+        "location": "Россия, Екатеринбург",
+        "now_label": "НА ДАННЫЙ МОМЕНТ",
+        "now_title": "Frontend разработчик",
+        "now_subtitle": "@Open source contributer",
+        "focus_label": "ФОКУС НА"
+    },
+    "projects": {
+        "title": "Мои проекты",
+        "items": {
+            "akat": {
+                "title": "Akat.kz",
+                "description": "Сайт для TOO AKAT TRADING. На сайте используется yandex api, сам же он генерирует первичные лиды, которые после попадают на почту менеджеру. После создания сайта компания увеличила свои продажи на 30%"
+            },
+            "marcus": {
+                "title": "Marcus ai",
+                "description": "ИИ-интервьюер который проводит собеседования для разработчиков"
+            },
+            "rootly": {
+                "title": "Rootly",
+                "description": "Проект который был сделан за 48 часов, в качестве решения кейса на хакатоне от T1. Кейс препдолагал создание сервиса для обработки terraform логов"
+            },
+            "trekshine": {
+                "title": "Интернет магазин Trekshine",
+                "description": "Проект на базе shopify themes и shopify api. В ходе работы над сайтом увеличил посещаемость в 5 раз, уменьшил время загрузки на 22%."
+            },
+            "vsepodomy": {
+                "title": "VsePoDomy.ru",
+                "description": "С нуля создал полноценный сайт для начинающей клининговой компании.В ходе работы был создан дизайн , сайт с формой заявки , интегрирована CRM-система Bitrix24."
+            },
+            "mindflow": {
+                "title": "Mindflow",
+                "description": "ИИ-чат где несколько агентов через ollama , которые общаются между собой. В архитектуре используется FSD"
+            }
+        }
+    },
+    "experience": {
+        "title": "Опыт работы",
+        "items": {
+            "aitomaton": {
+                "jobTitle": "Front-end developer",
+                "companyName": "Aitomaton",
+                "description": "Создание интерфейсов для дэшборда и графов , которые отображают статистику об ИИ"
+            },
+            "freelance": {
+                "jobTitle": "Front-end developer",
+                "companyName": "Фриланс",
+                "description": "Администрирование и настройка сайтов"
+            },
+            "startup": {
+                "jobTitle": "Джуниор Front-end Developer",
+                "companyName": "Стартап",
+                "description": "Создание мобильного приложения на react native для людей с ограниченными возможностями."
+            }
+        }
+    }
+}

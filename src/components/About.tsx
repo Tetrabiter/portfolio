@@ -1,8 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { useSectionObserver } from "@/utils/useIntersectionObserver";
-
+import { useTranslation, Trans } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
   const technologies = [
     "React",
     "Tailwind CSS",
@@ -42,29 +43,31 @@ const About = () => {
         <div className="lg:col-span-3 space-y-6 sm:space-y-8">
           <div className="space-y-3 sm:space-y-2">
             <div className="text-sm text-muted-foreground font-mono tracking-wider">
-              PORTFOLIO / 2025
+              {t('about.portfolio')}
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
-              Тимофей
+              {t('about.firstName')}
               <br />
-              <span className="text-muted-foreground">Еливанов</span>
+              <span className="text-muted-foreground">{t('about.lastName')}</span>
             </h1>
           </div>
 
           <div className="space-y-6 max-w-md">
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              Разработчик интерфейсов, создающий цифровые решения на стыке
-              <span className="text-foreground"> технологий</span>,
-              <span className="text-foreground"> дизайна</span> и
-              <span className="text-foreground"> пользовательского опыта</span>.
+              <Trans i18nKey="about.description">
+                Разработчик интерфейсов, создающий цифровые решения на стыке
+                <span className="text-foreground"> технологий</span>,
+                <span className="text-foreground"> дизайна</span> и
+                <span className="text-foreground"> пользовательского опыта</span>.
+              </Trans>
             </p>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                Открыт для предложений
+                {t('about.status')}
               </div>
-              <div>Россия, Екатеринбург</div>
+              <div>{t('about.location')}</div>
             </div>
           </div>
         </div>
@@ -72,19 +75,19 @@ const About = () => {
         <div className="lg:col-span-2 flex flex-col justify-end space-y-6 sm:space-y-8 mt-8 lg:mt-0">
           <div className="space-y-4">
             <div className="text-sm text-muted-foreground font-mono">
-              НА ДАННЫЙ МОМЕНТ
+              {t('about.now_label')}
             </div>
             <div className="space-y-2">
-              <div className="text-foreground">Frontend разработчик</div>
+              <div className="text-foreground">{t('about.now_title')}</div>
               <div className="text-muted-foreground">
-                @Open source contributer
+                {t('about.now_subtitle')}
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="text-sm text-muted-foreground font-mono">
-              ФОКУС НА
+              {t('about.focus_label')}
             </div>
             <div className="flex flex-wrap gap-2">{listOfTechnologies}</div>
           </div>

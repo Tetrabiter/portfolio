@@ -3,8 +3,10 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { useSectionObserver } from "@/utils/useIntersectionObserver";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation();
   interface Project {
     id: number;
     title: string;
@@ -19,9 +21,8 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Akat.kz",
-      description:
-        "Сайт для TOO AKAT TRADING. На сайте используется yandex api, сам же он генерирует первичные лиды, которые после попадают на почту менеджеру. После создания сайта компания увеличила свои продажи на 30%",
+      title: t("projects.items.akat.title"),
+      description: t("projects.items.akat.description"),
       demoLink: "https://akat.kz/",
       github: "#",
       technologies: ["React", "TailwindCSS", "API"],
@@ -30,9 +31,8 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Marcus ai",
-      description:
-        "ИИ-интервьюер который проводит собеседования для разработчиков",
+      title: t("projects.items.marcus.title"),
+      description: t("projects.items.marcus.description"),
       demoLink: "#",
       github: "https://github.com/Tetrabiter/Marcus.git",
       technologies: ["React", "Ollama", "Python"],
@@ -41,9 +41,8 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Rootly",
-      description:
-        "Проект который был сделан за 48 часов, в качестве решения кейса на хакатоне от T1. Кейс препдолагал создание сервиса для обработки terraform логов",
+      title: t("projects.items.rootly.title"),
+      description: t("projects.items.rootly.description"),
       demoLink: "#",
       github: "https://github.com/Tetrabiter/rootly-frontend.git",
       technologies: ["React", "TailwindCSS", "API"],
@@ -52,25 +51,33 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Интернет магазин Trekshine",
-      description:
-        "Проект на базе shopify themes и shopify api. В ходе работы над сайтом увеличил посещаемость в 5 раз, уменьшил время загрузки на 22%.",
+      title: t("projects.items.trekshine.title"),
+      description: t("projects.items.trekshine.description"),
       demoLink: "https://www.trekshine.com/",
       github: "#",
-      technologies: ["HTML", "Liquid" ,"JavaScript", "Shopify API", "CI/CD"],
+      technologies: ["HTML", "Liquid", "JavaScript", "Shopify API", "CI/CD"],
       imgSrc: "/trekshine.png",
       category: "Website",
     },
-     {
+    {
       id: 5,
-      title: "VsePoDomy.ru",
-      description:
-        "С нуля создал полноценный сайт для начинающей клининговой компании.В ходе работы был создан дизайн , сайт с формой заявки , интегрирована CRM-система Bitrix24.",
-      demoLink: "https://www.trekshine.com/",
+      title: t("projects.items.vsepodomy.title"),
+      description: t("projects.items.vsepodomy.description"),
+      demoLink: "https://vsepodomy.ru/",
       github: "#",
-      technologies: ["React", "TypeScript", "CRM" , "TaliwindCSS"],
+      technologies: ["React", "TypeScript", "CRM", "TaliwindCSS"],
       imgSrc: "/trekshine.png",
       category: "Website",
+    },
+    {
+      id: 6,
+      title: t("projects.items.mindflow.title"),
+      description: t("projects.items.mindflow.description"),
+      demoLink: "#",
+      github: "https://github.com/Dasadno/MindFlow",
+      technologies: ["React", "TypeScript", "Storybook", "FSD"],
+      imgSrc: "/ai-chatbot-interface.png",
+      category: "AI chat-bot",
     },
   ];
 
@@ -93,7 +100,7 @@ const Projects = () => {
       >
         <div className="w-full text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-            Мои проекты
+            {t("projects.title")}
           </h2>
         </div>
 

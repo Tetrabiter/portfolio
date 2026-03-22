@@ -1,5 +1,7 @@
 import { lazy, Suspense } from "react";
+import { useTranslation } from "react-i18next";
 import About from "./components/About";
+import { LanguageSwitcher } from "./components/LanguageSwitcher";
 import DotNavigation from "./components/DotNavigation";
 import Experience from "./components/Experience";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -9,16 +11,18 @@ const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
 
 function App() {
+  const { t } = useTranslation();
   const sections = [
-    { id: "about", label: "Обо мне" },
-    { id: "experience", label: "Опыт работы" },
-    { id: "projects", label: "Проекты" },
-    { id: "contact", label: "Контакты" },
+    { id: "about", label: t("nav.about") },
+    { id: "experience", label: t("nav.experience") },
+    { id: "projects", label: t("nav.projects") },
+    { id: "contact", label: t("nav.contact") },
   ];
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="w-full flex flex-col overflow-x-hiddenhidden">
+      <div className="w-full flex flex-col overflow-x-hidden">
+        <LanguageSwitcher />
         <DotNavigation sections={sections} />
 
         <About />

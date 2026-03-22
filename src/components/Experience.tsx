@@ -1,5 +1,6 @@
 import { Badge } from "./ui/badge";
 import { useSectionObserver } from "@/utils/useIntersectionObserver";
+import { useTranslation } from "react-i18next";
 
 interface WorkExperience {
   id: number;
@@ -11,31 +12,31 @@ interface WorkExperience {
 }
 
 const Experience = () => {
+  const { t } = useTranslation();
+
   const workExperience: WorkExperience[] = [
     {
       id: 1,
-      timeline: "2024-2025",
-      jobTitle: "Front-end developer",
-      companyName: "Aitomaton",
-      description:
-        "Создание интерфейсов для дэшборда и графов , которые отображают статистику об ИИ",
+      timeline: "2024",
+      jobTitle: t("experience.items.aitomaton.jobTitle"),
+      companyName: t("experience.items.aitomaton.companyName"),
+      description: t("experience.items.aitomaton.description"),
       jobStack: ["React", "TypeScript", "Joy UI", "CSS-IN-JS"],
     },
     {
       id: 2,
       timeline: "2023-2024",
-      jobTitle: "Front-end developer",
-      companyName: "Фриланс",
-      description: "Администрирование и настройка сайтов",
+      jobTitle: t("experience.items.freelance.jobTitle"),
+      companyName: t("experience.items.freelance.companyName"),
+      description: t("experience.items.freelance.description"),
       jobStack: ["React", "JavaScript", "WordPress", "CSS"],
     },
     {
       id: 3,
       timeline: "2022-2023",
-      jobTitle: "Джуниор Front-end Developer",
-      companyName: "Стартап",
-      description:
-        "Создание мобильного приложения на react native для людей с ограниченными возможностями.",
+      jobTitle: t("experience.items.startup.jobTitle"),
+      companyName: t("experience.items.startup.companyName"),
+      description: t("experience.items.startup.description"),
       jobStack: ["HTML", "CSS", "JavaScript", "React Native", "Expo"],
     },
   ];
@@ -102,7 +103,7 @@ const Experience = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-4">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-          Опыт работы
+          {t("experience.title")}
         </h2>
         <p className="text-3xl font-mono sm:text-5xl lg:text-6xl font-bold text-gray-400">
           2022-2024
