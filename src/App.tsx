@@ -1,14 +1,12 @@
-import { lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import About from "./components/About";
 import { LanguageSwitcher } from "./components/LanguageSwitcher";
 import DotNavigation from "./components/DotNavigation";
 import Experience from "./components/Experience";
 import { ThemeProvider } from "@/components/theme-provider";
-import SectionPlaceholder from "./components/SectionPlaceholder";
 
-const Projects = lazy(() => import("./components/Projects"));
-const Contact = lazy(() => import("./components/Contact"));
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function App() {
   const { t } = useTranslation();
@@ -28,13 +26,8 @@ function App() {
         <About />
         <Experience />
 
-        <Suspense fallback={<SectionPlaceholder />}>
-          <Projects />
-        </Suspense>
-
-        <Suspense fallback={<SectionPlaceholder />}>
-          <Contact />
-        </Suspense>
+        <Projects />
+        <Contact />
 
         <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none"></div>
       </div>

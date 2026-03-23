@@ -131,7 +131,9 @@ const Projects = () => {
                   <img
                     src={project.imgSrc || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/60" />
 
@@ -154,7 +156,7 @@ const Projects = () => {
                           <Badge
                             key={tech}
                             variant="outline"
-                            className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:border-muted-foreground/50 transition-colors duration-300"
+                            className="bg-background/80 hover:border-muted-foreground/50 transition-colors duration-300"
                           >
                             {tech}
                           </Badge>
@@ -176,7 +178,7 @@ const Projects = () => {
                                 asChild
                                 size="icon"
                                 variant="outline"
-                                className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
+                                className="bg-background/80 hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
                               >
                                 <a
                                   href={project.demoLink}
@@ -201,7 +203,7 @@ const Projects = () => {
                             asChild
                             size="icon"
                             variant="outline"
-                            className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
+                            className="bg-background/80 hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
                           >
                             <a
                               href={project.github}
