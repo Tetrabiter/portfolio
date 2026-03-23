@@ -16,6 +16,7 @@ const Projects = () => {
     technologies: string[];
     imgSrc: string;
     category: string;
+    isAvailable?: boolean;
   }
 
   const projects: Project[] = [
@@ -28,6 +29,7 @@ const Projects = () => {
       technologies: ["React", "TailwindCSS", "API"],
       imgSrc: "/akat-kz.png",
       category: "Landing",
+      isAvailable: false,
     },
     {
       id: 2,
@@ -38,6 +40,7 @@ const Projects = () => {
       technologies: ["React", "Ollama", "Python"],
       imgSrc: "/ai-chatbot-interface.png",
       category: "AI chat-bot",
+      isAvailable: false,
     },
     {
       id: 3,
@@ -48,16 +51,18 @@ const Projects = () => {
       technologies: ["React", "TailwindCSS", "API"],
       imgSrc: "/rootly.png",
       category: "SPA",
+      isAvailable: false,
     },
     {
       id: 4,
       title: t("projects.items.trekshine.title"),
       description: t("projects.items.trekshine.description"),
-      demoLink: "https://www.trekshine.com/",
-      github: "#",
+      demoLink: "",
+      github: "https://github.com/Tetrabiter/trekshine-online-store.git",
       technologies: ["HTML", "Liquid", "JavaScript", "Shopify API", "CI/CD"],
       imgSrc: "/trekshine.png",
       category: "Website",
+      isAvailable: false,
     },
     {
       id: 5,
@@ -66,7 +71,7 @@ const Projects = () => {
       demoLink: "https://vsepodomy.ru/",
       github: "#",
       technologies: ["React", "TypeScript", "CRM", "TaliwindCSS"],
-      imgSrc: "/trekshine.png",
+      imgSrc: "/vse-po-domy.png",
       category: "Website",
     },
     {
@@ -76,8 +81,9 @@ const Projects = () => {
       demoLink: "#",
       github: "https://github.com/Dasadno/MindFlow",
       technologies: ["React", "TypeScript", "Storybook", "FSD"],
-      imgSrc: "/ai-chatbot-interface.png",
+      imgSrc: "/mindflow.png",
       category: "AI chat-bot",
+      isAvailable: false,
     },
   ];
 
@@ -146,20 +152,40 @@ const Projects = () => {
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <Button
-                          asChild
-                          size="icon"
-                          variant="outline"
-                          className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
-                        >
-                          <a
-                            href={project.demoLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        {project.isAvailable !== false ? (
+                          <>
+                            <Badge
+                              variant="outline"
+                              className="bg-green-500/10 text-green-500 border-green-500/20 py-1.5"
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2 animate-pulse" />
+                              {t("projects.status.online")}
+                            </Badge>
+                            {project.demoLink && project.demoLink !== "#" && (
+                              <Button
+                                asChild
+                                size="icon"
+                                variant="outline"
+                                className="bg-background/50 backdrop-blur-none md:backdrop-blur-sm hover:bg-background hover:border-muted-foreground/50 transition-all duration-300"
+                              >
+                                <a
+                                  href={project.demoLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <FaExternalLinkAlt className="h-4 w-4" />
+                                </a>
+                              </Button>
+                            )}
+                          </>
+                        ) : (
+                          <Badge
+                            variant="secondary"
+                            className="bg-muted text-muted-foreground border-transparent py-1.5"
                           >
-                            <FaExternalLinkAlt className="h-4 w-4" />
-                          </a>
-                        </Button>
+                            {t("projects.status.offline")}
+                          </Badge>
+                        )}
                         {project.github !== "#" && (
                           <Button
                             asChild

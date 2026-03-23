@@ -19,6 +19,10 @@
     },
     "projects": {
         "title": "My Projects",
+        "status": {
+            "online": "Available online",
+            "offline": "Temporarily unavailable"
+        },
         "items": {
             "akat": {
                 "title": "Akat.kz",
