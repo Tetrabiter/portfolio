@@ -26,7 +26,7 @@ export default function Contact() {
           <p className="underline mt-2">timofei.yelivanov@gmail.com →</p>
         </div>
         <div className="grid grid-flow-col sm:grid-flow-row gap-x-5 gap-y-6">
-          <a href="https://t.me/TimElesh">
+          <a href="https://t.me/TimofeyYelivanov">
             <Card
               tabIndex={0}
               className="p-8 hover:bg-gray-950 focus:outline-1 focus:outline-offset-2 focus:outline-black dark:focus:outline-white duration-200"
@@ -46,5 +46,5 @@ export default function Contact() {
         </div>
       </section>
     </div>
-  );
+  );~
 }
