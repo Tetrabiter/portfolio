@@ -28,7 +28,7 @@ const Projects = () => {
       github: "#",
       technologies: ["React", "TailwindCSS", "API"],
       imgSrc: "/akat-kz.png",
-      category: "Landing",
+      category: "Landing page",
       isAvailable: false,
     },
     {
@@ -48,7 +48,7 @@ const Projects = () => {
       description: t("projects.items.rootly.description"),
       demoLink: "#",
       github: "https://github.com/Tetrabiter/rootly-frontend.git",
-      technologies: ["React", "TailwindCSS", "API"],
+      technologies: ["React", "TailwindCSS", "Yandex API"],
       imgSrc: "/rootly.png",
       category: "SPA",
       isAvailable: false,
@@ -84,6 +84,16 @@ const Projects = () => {
       imgSrc: "/mindflow.png",
       category: "AI chat-bot",
       isAvailable: false,
+    },
+    {
+      id: 7,
+      title: t("projects.items.void-studio.title"),
+      description: t("projects.items.void-studio.description"),
+      demoLink: "https://tetrabiter.github.io/void-studio-landing/",
+      github: "https://github.com/Tetrabiter/void-studio-landing",
+      technologies: ["React", "TypeScript", "Intersection Observer API"],
+      imgSrc: "/void-studio.png",
+      category: "Landing page",
     },
   ];
 

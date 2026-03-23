@@ -47,6 +47,10 @@
             "mindflow": {
                 "title": "Mindflow",
                 "description": "AI-interviewer that conducts technical interviews for developers"
+            },
+            "void-studio": {
+                "title": "Void Studio",
+                "description": "Landing page for software development agency"
             }
         }
     },
