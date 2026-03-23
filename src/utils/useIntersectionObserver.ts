@@ -1,5 +1,5 @@
 // Улучшенная версия вашего хука с анимациями
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 
 interface UseSectionObserverReturn {
   activeSection: string | null;
@@ -8,12 +8,16 @@ interface UseSectionObserverReturn {
 }
 
 export function useSectionObserver(
-  sectionIds: string[], 
+  sectionIds: string[],
   options: IntersectionObserverInit = {}
 ): UseSectionObserverReturn {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
   const observers = useRef<Map<string, IntersectionObserver>>(new Map());
+
+  // Мемоизируем зависимости через stringify, чтобы избежать пересоздания IntersectionObserver при каждом рендере
+  const stableSectionIds = useMemo(() => sectionIds, [JSON.stringify(sectionIds)]);
+  const stableOptions = useMemo(() => options, [JSON.stringify(options)]);
 
   const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -26,10 +30,10 @@ export function useSectionObserver(
     const defaultOptions: IntersectionObserverInit = {
       threshold: 0.3, // Увеличил для лучшего определения видимости
       rootMargin: '-10% 0px -10% 0px',
-      ...options
+      ...stableOptions
     };
 
-    sectionIds.forEach(sectionId => {
+    stableSectionIds.forEach(sectionId => {
       const element = document.getElementById(sectionId);
       if (!element) {
         console.warn(`Element with id "${sectionId}" not found`);
@@ -53,7 +57,7 @@ export function useSectionObserver(
       observers.current.forEach(observer => observer.disconnect());
       observers.current.clear();
     };
-  }, [sectionIds, options]);
+  }, [stableSectionIds, stableOptions]);
 
   return {
     activeSection,
