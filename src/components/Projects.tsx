@@ -85,7 +85,7 @@ const Projects = () => {
       category: "AI chat-bot",
       isAvailable: false,
     },
-    {
+    /* {
       id: 7,
       title: t("projects.items.void-studio.title"),
       description: t("projects.items.void-studio.description"),
@@ -94,7 +94,7 @@ const Projects = () => {
       technologies: ["React", "TypeScript", "Intersection Observer API"],
       imgSrc: "/void-studio.png",
       category: "Landing page",
-    },
+    }, */
   ];
 
   const sectionIds = ["projects"];
